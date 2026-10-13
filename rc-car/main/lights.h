@@ -8,10 +8,10 @@
 
 // Configure Idle Lamps
 
-void configure_leds(int light);
+void configure_leds(int LIGHT_PIN);
 
 // Configure Blinkers
-void configure_blinkers(int left, int right);
+void configure_blinkers(int LEFT_PIN, int RIGHT_PIN);
 
 // Blinker Interrupt
 void blinker_interrupt();
@@ -21,4 +21,4 @@ void toggle_left_blinker();
 void toggle_right_blinker();
 
 // Lights toggle
-void toggle_lights();
+void toggle_lights(int LIGHT_PIN);
