@@ -25,7 +25,14 @@ void configure_blinkers(int LEFT_PIN, int RIGHT_PIN) {
 
 // Blinker Interrupt
 void blinker_interrupt() {
-    // This code may not be needed
+    // For the Blinkers to work, 
+    //      they need to be put in an interruptable loop so that t
+    //      he car can do everything else while also managing the blinkers
+    // Blinkers should flash every second, so ideally I would run a background timer using RTC
+    //      if the left/right flag is 1 then the light should be flicking on and off
+    //      otherwise the light stays off
+    //      this approach allows the blinkers to be on at the same time for hazards with no additional code
+    //      every second it toggles the blinker on/off
     return;
 }
 
