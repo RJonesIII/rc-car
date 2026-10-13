@@ -14,9 +14,7 @@
 #include "esp_flash.h"
 #include "esp_system.h"
 
-#define LIGHTS 15 // Sitting on D15
-#define L_BLINKER 2 // Sitting on D2
-#define R_BLINKER 4 // Sitting on D4
+
 // #define MOTOR 
 
 void app_main(void)
@@ -24,8 +22,8 @@ void app_main(void)
     printf("Hello World");
     // Configure Lights
     // Configure Commands
-    configure_leds(LIGHTS);
-    configure_blinkers(L_BLINKER, R_BLINKER);
+    configure_leds();
+    configure_blinkers();
 
     // First Step - Keyboard Commands
     // 'L' -> Turns Lights on (Front and Back)
@@ -39,7 +37,7 @@ void app_main(void)
     while(1) {
         
         if((c = getchar()) == 'L') {
-            toggle_lights(LIGHTS);
+            toggle_lights();
             c = 0;
         }
         
