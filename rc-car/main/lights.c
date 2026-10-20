@@ -31,13 +31,13 @@ void configure_blinkers() {
     gptimer_config_t timer_config = {
         .clk_src = GPTIMER_CLK_SRC_DEFAULT, // Select the default clock source
         .direction = GPTIMER_COUNT_UP,      // Counting direction is up
-        .resolution_hz = 1,  // Resolution is 1 Hz, which is once a second
+        .resolution_hz = 1000,  // Resolution is 1000 Hz, which is 1000 times a second (1000 ms)
     };
 
     gptimer_new_timer(&timer_config, &gptimer);
 
     gptimer_alarm_config_t alarm_config = {
-        .alarm_count = 1, // Set the actual alarm period, alarm every other second
+        .alarm_count = 1000, // Set the actual alarm period, alarm every other second
         .flags.auto_reload_on_alarm = true, // Enables auto-reload function
     };
 
