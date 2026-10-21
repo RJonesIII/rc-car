@@ -117,6 +117,7 @@ void toggle_left_blinker() {
     if(left_blinker_flag == 0) {
         printf("Update: Left Blinker On \n");
 
+        gpio_set_level(RIGHT_PIN, 0);
         left_blinker_flag = 1;
         right_blinker_flag = 0;
     }else {
@@ -133,6 +134,7 @@ void toggle_right_blinker() {
     if(right_blinker_flag == 0) {
         printf("Update: Right Blinker On \n");
 
+        gpio_set_level(LEFT_PIN, 0);
         right_blinker_flag = 1;
         left_blinker_flag = 0;
     }else {
@@ -161,6 +163,9 @@ void toggle_hazzard_flag() {
     if(hazzards_flag) {
         printf("Update: Hazzards Off \n");
         hazzards_flag = 0;
+        // Both lights are set to off
+        gpio_set_level(RIGHT_PIN, 0);
+        gpio_set_level(LEFT_PIN, 0);
     }else {
         // If hazzards are disabled, they are now enabled
         printf("Update: Hazzards On \n");

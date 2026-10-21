@@ -19,7 +19,7 @@
 
 void app_main(void)
 {
-    printf("Hello World");
+    printf("Nissan GTR On \n");
     // Configure Lights
     // Configure Commands
     configure_leds();
