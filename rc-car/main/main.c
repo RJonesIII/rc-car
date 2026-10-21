@@ -40,15 +40,15 @@ void app_main(void)
             toggle_lights();
             c = 0;
 
-        }else if ((c = getchar()) == 'H') {
+        }else if (c == 'X') {
             toggle_hazzard_flag();
             c = 0;
 
-        }else if((c = getchar()) == 'Z') {
+        }else if(c == 'Z') {
             toggle_left_blinker();
             c = 0;
 
-        }else if((c = getchar()) == 'C') {
+        }else if(c == 'C') {
             toggle_right_blinker();
             c = 0;
         }
