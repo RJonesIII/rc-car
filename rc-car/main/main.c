@@ -27,8 +27,8 @@ void app_main(void)
 
     // First Step - Keyboard Commands
     // 'L' -> Turns Lights on (Front and Back)
-    // 'C' -> Turns on left blinker
-    // 'Z' -> Turns on right blinker
+    // 'Z' -> Turns on left blinker
+    // 'C' -> Turns on right blinker
     // 'X' -> Turns on hazards (both left and right)
     // 'W' -> Drives Motor forward
     // 'D' -> Drives Motor backward
@@ -39,7 +39,21 @@ void app_main(void)
         if((c = getchar()) == 'L') {
             toggle_lights();
             c = 0;
+
+        }else if ((c = getchar()) == 'H') {
+            toggle_hazzard_flag();
+            c = 0;
+
+        }else if((c = getchar()) == 'Z') {
+            toggle_left_blinker();
+            c = 0;
+
+        }else if((c = getchar()) == 'C') {
+            toggle_right_blinker();
+            c = 0;
         }
+
+        
         
 
         vTaskDelay(pdMS_TO_TICKS(10));
